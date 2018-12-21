@@ -22,8 +22,8 @@ public class CadastrarStepsTest {
 					
 					//Abordagem Funcional
 		new CadastrarPage(navegador).
-					irParaCriarConta(). 
-					criarCadastro().
+					irParaCriarConta("jhonatas-00teste@teste.com"). 
+					criarCadastro("jhonatas-00teste@teste.com").
 					validarCadastro();
 		
 					//Abordagem Estrutural

@@ -15,9 +15,9 @@ public class CadastrarPage extends BasePage {
 		super(navegador);
 	}
 	
-	public CadastrarPage irParaCriarConta() {
+	public CadastrarPage irParaCriarConta(String email) {
 		navegador.findElement(By.linkText("Sign in")).click();
-		navegador.findElement(By.id("email_create")).sendKeys("jhonatas09-teste@teste.com");		
+		navegador.findElement(By.id("email_create")).sendKeys(email);		
 		navegador.findElement(By.id("SubmitCreate")).click();
 		
 		return new CadastrarPage(navegador);
@@ -45,10 +45,10 @@ public class CadastrarPage extends BasePage {
 		return this;
 	}
 	
-	public CadastrarPage preencherEmailCadastro() {
+	public CadastrarPage preencherEmailCadastro(String email) {
 		navegador.findElement(By.id("email")).click();
 		navegador.findElement(By.id("email")).clear();
-		navegador.findElement(By.id("email")).sendKeys("jhonatas09-teste@teste.com");
+		navegador.findElement(By.id("email")).sendKeys(email);
 		
 		return this;
 	}
@@ -161,12 +161,12 @@ public class CadastrarPage extends BasePage {
 		return this;
 	}
 	
-	public CadastrarPage criarCadastro(){
+	public CadastrarPage criarCadastro(String email){
 		
 		selecionarRadioMr();
 		preencherNome();
 		preencherSobreNome();
-		preencherEmailCadastro();
+		preencherEmailCadastro(email);
 		preencherSenha();
 		preencherDataNascimento();
 		clicarNosCheckbox();
