@@ -3,9 +3,9 @@ package br.com.pages;
 import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.FluentWait;
+import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class CadastrarPage extends BasePage {
@@ -112,8 +112,8 @@ public class CadastrarPage extends BasePage {
 	}
 
 	public CadastrarPage selecionarEstado() {
-		navegador.findElement(By.id("id_state")).click();
-		navegador.findElement(By.id("id_state")).sendKeys("Alabama");
+		Select comboEstado = new Select(navegador.findElement(By.id("id_state")));
+		comboEstado.selectByVisibleText("Alabama");
 		
 		return this;
 	}
